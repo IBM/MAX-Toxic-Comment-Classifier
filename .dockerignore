@@ -1,0 +1,14 @@
+README.*
+.idea/
+.git/
+.gitignore
+tests/
+.pytest_cache
+tests/
+assets/.pytest_cache
+venv/
+assets/BERT_PyTorch/
+assets/assets.tar.gz
+assets/BERT_PyTorch.zip
+benchmark_model/
+docs/
