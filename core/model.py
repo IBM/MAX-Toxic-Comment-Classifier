@@ -69,7 +69,7 @@ class ModelWrapper(MAXModelWrapper):
                    LABEL_LIST[3]: p[3],
                    LABEL_LIST[4]: p[4],
                    LABEL_LIST[5]: p[5],
-                   } for i, p in enumerate(result)]
+                   } for p in result]
 
         return output
 
