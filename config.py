@@ -8,7 +8,7 @@ SWAGGER_UI_DOC_EXPANSION = 'none'
 # API metadata
 API_TITLE = 'MAX Toxic Comment Classifier'
 API_DESC = 'Detect 6 types of toxicity in user comments.'
-API_VERSION = '1.0'
+API_VERSION = '1.0.1'
 
 # default model
 MODEL_NAME = 'BERT_PyTorch'
