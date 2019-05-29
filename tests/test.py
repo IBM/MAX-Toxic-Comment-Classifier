@@ -96,11 +96,11 @@ def test_predict_response():
     assert response['status'] == 'ok'
 
     # verify that 'good string' is non-toxic
-    assert round(float(response['predictions'][0][0]['toxic'])) == 0
+    assert round(float(response['predictions'][0]['toxic'])) == 0
     # verify that 'dumb string' is in fact toxic
-    assert round(float(response['predictions'][1][0]['toxic'])) == 1
+    assert round(float(response['predictions'][1]['toxic'])) == 1
     # verify that we have 6 labels
-    assert len(response['predictions'][1][0].keys()) == 6
+    assert len(response['predictions'][1].keys()) == 6
 
     json_data2 = {
         "text": [
@@ -117,11 +117,11 @@ def test_predict_response():
     assert response['status'] == 'ok'
 
     # verify the outcome of the first comment
-    assert round(float(response['predictions'][0][0]['toxic'])) == 1
+    assert round(float(response['predictions'][0]['toxic'])) == 1
     # verify the outcome of the second comment
-    assert round(float(response['predictions'][1][0]['toxic'])) == 0
+    assert round(float(response['predictions'][1]['toxic'])) == 0
     # verify the outcome of the third comment
-    assert round(float(response['predictions'][2][0]['toxic'])) == 1
+    assert round(float(response['predictions'][2]['toxic'])) == 1
 
     # The last entry of assets/test_examples.csv contains all types of toxicity. This is verified here.
     with open('assets/test_examples.csv', 'rb') as fh:
@@ -138,12 +138,12 @@ def test_predict_response():
     response = r.json()
 
     assert response['status'] == 'ok'
-    assert round(float(response['predictions'][0][0]['toxic'])) == 1
-    assert round(float(response['predictions'][0][0]['severe_toxic'])) == 1
-    assert round(float(response['predictions'][0][0]['obscene'])) == 1
-    assert round(float(response['predictions'][0][0]['insult'])) == 1
-    assert round(float(response['predictions'][0][0]['threat'])) == 1
-    assert round(float(response['predictions'][0][0]['identity_hate'])) == 1
+    assert round(float(response['predictions'][0]['toxic'])) == 1
+    assert round(float(response['predictions'][0]['severe_toxic'])) == 1
+    assert round(float(response['predictions'][0]['obscene'])) == 1
+    assert round(float(response['predictions'][0]['insult'])) == 1
+    assert round(float(response['predictions'][0]['threat'])) == 1
+    assert round(float(response['predictions'][0]['identity_hate'])) == 1
 
     # Test different input batch sizes
     for input_size in [4, 16, 32, 64, 75]:
