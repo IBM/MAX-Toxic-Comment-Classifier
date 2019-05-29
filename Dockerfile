@@ -1,4 +1,4 @@
-FROM codait/max-base:v1.1.1
+FROM codait/max-base:v1.1.3
 RUN apt-get update && apt-get install -y gcc && rm -rf /var/lib/apt/lists/*
 
 ARG model_bucket=http://max-assets.s3.us.cloud-object-storage.appdomain.cloud/max-toxic-comment-classifier/1.0
