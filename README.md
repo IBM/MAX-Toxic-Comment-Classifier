@@ -156,7 +156,7 @@ Result:
 ```
 
 
-Use the ```model/predict``` endpoint to submit input text in json format. The json structure should have one key, ```text```, with as value a list of input strings to be analyzed. An example can be found in the image below.
+Use the ```model/predict``` endpoint to submit input text in json format. The JSON structure should have one key, ```text```, with as value a list of input strings to be analyzed. An example can be found in the image below.
 
 Submitting proper json data triggers the model and will return a json file with a ```status``` and a ```predictions``` key. With this ```predictions``` field, a list of class labels and their corresponding probabilities will be associated. The first element in the list corresponds to the prediction for the first string in the input list.
 
