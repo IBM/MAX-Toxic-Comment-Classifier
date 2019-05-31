@@ -124,31 +124,35 @@ The API server automatically generates an interactive Swagger documentation page
 
 ```
 Example:
-[
-"I would like to punch you.",
-"In hindsight, I do apologize for my previous statement."
-]
+{
+  "text": [
+    "I would like to punch you.",
+    "In hindsight, I do apologize for my previous statement."
+  ]
+}
 
 Result:
-[
-  {
-    "toxic": 0.9901040196418762,
-    "severe_toxic": 0.0633348673582077,
-    "obscene": 0.03769039735198021,
-    "threat": 0.8634893894195557,
-    "insult": 0.12741504609584808,
-    "identity_hate": 0.011624536477029324
-  },
-  
-  {
-    "toxic": 0.00029103411361575127,
-    "severe_toxic": 0.00012417171092238277,
-    "obscene": 0.0001522741513326764,
-    "threat": 0.00008440746751148254,
-    "insult": 0.00016013195272535086,
-    "identity_hate": 0.0001286086771870032
-  }
-]
+{
+  "status": "ok",
+  "predictions": [
+    {
+      "toxic": 0.9796434044837952,
+      "severe_toxic": 0.07256636023521423,
+      "obscene": 0.058431386947631836,
+      "threat": 0.8635178804397583,
+      "insult": 0.11121545732021332,
+      "identity_hate": 0.013826466165482998
+    },
+    {
+      "toxic": 0.00029103411361575127,
+      "severe_toxic": 0.00012417171092238277,
+      "obscene": 0.0001522742968518287,
+      "threat": 0.00008440738747594878,
+      "insult": 0.00016013195272535086,
+      "identity_hate": 0.00012860879360232502
+    }
+  ]
+}
 ```
 
 
@@ -171,26 +175,22 @@ You should see a JSON response like that below:
 {
   "status": "ok",
   "predictions": [
-    [
-      {
-        "toxic": 0.9796434044837952,
-        "severe_toxic": 0.07256636023521423,
-        "obscene": 0.058431386947631836,
-        "threat": 0.8635178804397583,
-        "insult": 0.11121545732021332,
-        "identity_hate": 0.013826466165482998
-      }
-    ],
-    [
-      {
-        "toxic": 0.00029103411361575127,
-        "severe_toxic": 0.00012417171092238277,
-        "obscene": 0.0001522742968518287,
-        "threat": 0.00008440738747594878,
-        "insult": 0.00016013195272535086,
-        "identity_hate": 0.00012860879360232502
-      }
-    ]
+    {
+      "toxic": 0.9796434044837952,
+      "severe_toxic": 0.07256636023521423,
+      "obscene": 0.058431386947631836,
+      "threat": 0.8635178804397583,
+      "insult": 0.11121545732021332,
+      "identity_hate": 0.013826466165482998
+    },
+    {
+      "toxic": 0.00029103411361575127,
+      "severe_toxic": 0.00012417171092238277,
+      "obscene": 0.0001522742968518287,
+      "threat": 0.00008440738747594878,
+      "insult": 0.00016013195272535086,
+      "identity_hate": 0.00012860879360232502
+    }
   ]
 }
 ```
