@@ -123,8 +123,8 @@ def test_predict_response():
     # verify the outcome of the third comment
     assert round(float(response['predictions'][2]['toxic'])) == 1
 
-    # The last entry of assets/test_examples.csv contains all types of toxicity. This is verified here.
-    with open('assets/test_examples.csv', 'rb') as fh:
+    # The last entry of samples/test_examples.csv contains all types of toxicity. This is verified here.
+    with open('samples/test_examples.csv', 'rb') as fh:
         for line in fh:
             pass
 
