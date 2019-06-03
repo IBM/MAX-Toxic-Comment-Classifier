@@ -63,13 +63,13 @@ class ModelWrapper(MAXModelWrapper):
     def _post_process(self, result):
         """Convert the prediction output to the expected output."""
         # Generate the output format for every input string
-        output = [[{LABEL_LIST[0]: p[0],
-                    LABEL_LIST[1]: p[1],
-                    LABEL_LIST[2]: p[2],
-                    LABEL_LIST[3]: p[3],
-                    LABEL_LIST[4]: p[4],
-                    LABEL_LIST[5]: p[5],
-                    }] for i, p in enumerate(result)]
+        output = [{LABEL_LIST[0]: p[0],
+                   LABEL_LIST[1]: p[1],
+                   LABEL_LIST[2]: p[2],
+                   LABEL_LIST[3]: p[3],
+                   LABEL_LIST[4]: p[4],
+                   LABEL_LIST[5]: p[5],
+                   } for p in result]
 
         return output
 
