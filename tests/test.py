@@ -43,7 +43,7 @@ def test_invalid_input():
 
     invalid_data3 = ''
 
-    invalid_data4 = 3459_000
+    invalid_data4 = 3459000
 
     invalid_data5 = {'text': 45435}
 
