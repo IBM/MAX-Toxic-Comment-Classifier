@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.com/IBM/MAX-Toxic-Comment-Classifier.svg?branch=master)](https://travis-ci.com/IBM/MAX-Toxic-Comment-Classifier) [![API demo](https://img.shields.io/website/http/max-toxic-comment-classifier.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=API%20demo&down_message=down&up_message=up)](http://max-toxic-comment-classifier.max.us-south.containers.appdomain.cloud/)
 
+[<img src="docs/deploy-max-to-ibm-cloud-with-kubernetes-button.png" width="400px">](http://ibm.biz/max-to-ibm-cloud-tutorial)
+
 # IBM Developer Model Asset Exchange: Toxic Comment Classifier
 
 This repository contains code to instantiate and deploy a toxic comment classifier. This model is able to detect 6 types of toxicity in a text fragment. The six detectable types are toxic, severe toxic, obscene, threat, insult, and identity hate.
@@ -7,7 +9,7 @@ This repository contains code to instantiate and deploy a toxic comment classifi
 The model is based on the [pre-trained BERT-Base, English Uncased](https://github.com/google-research/bert/blob/master/README.md) model and was finetuned on the [Toxic Comment Classification Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data) using the [Huggingface BERT Pytorch repository](https://github.com/huggingface/pytorch-pretrained-BERT). The model files are hosted on
 [IBM Cloud Object Storage](http://max-assets.s3.us.cloud-object-storage.appdomain.cloud/max-toxic-comment-classifier/1.0/assets.tar.gz).
 The code in this repository deploys the model as a web service in a Docker container. This repository was developed
-as part of the [IBM Developer Model Asset Exchange](https://developer.ibm.com/exchanges/models/).
+as part of the [IBM Developer Model Asset Exchange](https://developer.ibm.com/exchanges/models/) and the public API is powered by [IBM Cloud](https://ibm.biz/Bdz2XM).
 
 A brief definition of the six different toxicity types can be found below.
 
@@ -80,6 +82,8 @@ $ kubectl apply -f https://github.com/IBM/MAX-Toxic-Comment-Classifier/raw/maste
 ```
 
 The model will be available internally at port `5000`, but can also be accessed externally through the `NodePort`.
+
+A more elaborate tutorial on how to deploy this MAX model to production on [IBM Cloud](https://ibm.biz/Bdz2XM) can be found [here](http://ibm.biz/max-to-ibm-cloud-tutorial).
 
 ## Run Locally
 1. [Build the Model](#1-build-the-model)
