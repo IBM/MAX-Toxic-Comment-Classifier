@@ -1,3 +1,0 @@
-74d4f96fdabdd865cbdbe905cd46c1f1  assets/BERT_PyTorch/bert_config.json
-6084943a7a050bf12220f49e061c5ca6  assets/BERT_PyTorch/pytorch_model.bin
-64800d5d8528ce344256daf115d4965e  assets/BERT_PyTorch/vocab.txt
