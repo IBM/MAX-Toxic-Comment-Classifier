@@ -144,22 +144,28 @@ Example:
 Result:
 {
   "status": "ok",
-  "predictions": [
+  "results": [
     {
-      "toxic": 0.9796434044837952,
-      "severe_toxic": 0.07256636023521423,
-      "obscene": 0.058431386947631836,
-      "threat": 0.8635178804397583,
-      "insult": 0.11121545732021332,
-      "identity_hate": 0.013826466165482998
+      "original_text": "I would like to punch you.",
+      "predictions": {
+        "toxic": 0.9796434044837952,
+        "severe_toxic": 0.07256634533405304,
+        "obscene": 0.058431386947631836,
+        "threat": 0.8635178804397583,
+        "insult": 0.11121545732021332,
+        "identity_hate": 0.013826466165482998
+      }
     },
     {
-      "toxic": 0.00029103411361575127,
-      "severe_toxic": 0.00012417171092238277,
-      "obscene": 0.0001522742968518287,
-      "threat": 0.00008440738747594878,
-      "insult": 0.00016013195272535086,
-      "identity_hate": 0.00012860879360232502
+      "original_text": "In hindsight, I do apologize for my previous statement.",
+      "predictions": {
+        "toxic": 0.00029103411361575127,
+        "severe_toxic": 0.00012417171092238277,
+        "obscene": 0.0001522742968518287,
+        "threat": 8.440738747594878e-05,
+        "insult": 0.00016013211279641837,
+        "identity_hate": 0.00012860879360232502
+      }
     }
   ]
 }
@@ -184,22 +190,28 @@ You should see a JSON response like that below:
 ```json
 {
   "status": "ok",
-  "predictions": [
+  "results": [
     {
-      "toxic": 0.9796434044837952,
-      "severe_toxic": 0.07256636023521423,
-      "obscene": 0.058431386947631836,
-      "threat": 0.8635178804397583,
-      "insult": 0.11121545732021332,
-      "identity_hate": 0.013826466165482998
+      "original_text": "I would like to punch you.",
+      "predictions": {
+        "toxic": 0.9796434044837952,
+        "severe_toxic": 0.07256634533405304,
+        "obscene": 0.058431386947631836,
+        "threat": 0.8635178804397583,
+        "insult": 0.11121545732021332,
+        "identity_hate": 0.013826466165482998
+      }
     },
     {
-      "toxic": 0.00029103411361575127,
-      "severe_toxic": 0.00012417171092238277,
-      "obscene": 0.0001522742968518287,
-      "threat": 0.00008440738747594878,
-      "insult": 0.00016013195272535086,
-      "identity_hate": 0.00012860879360232502
+      "original_text": "In hindsight, I do apologize for my previous statement.",
+      "predictions": {
+        "toxic": 0.00029103411361575127,
+        "severe_toxic": 0.00012417171092238277,
+        "obscene": 0.0001522742968518287,
+        "threat": 8.440738747594878e-05,
+        "insult": 0.00016013211279641837,
+        "identity_hate": 0.00012860879360232502
+      }
     }
   ]
 }

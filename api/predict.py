@@ -47,9 +47,15 @@ label_prediction = MAX_API.model('LabelPrediction', {
     'identity_hate': fields.Float(required=True, description=label_description['identity_hate']),
 })
 
+
+results_response = MAX_API.model("ModelResultResponse", {
+    'original_text': fields.String(reqired=True, description='User submitted text'),
+    'predictions': fields.Nested(label_prediction, description='Predicted labels and probabilities')
+})
+
 predict_response = MAX_API.model('ModelPredictResponse', {
     'status': fields.String(required=True, description='Response status message'),
-    'predictions': fields.List(fields.Nested(label_prediction), description='Predicted labels and probabilities')
+    'results': fields.List(fields.Nested(results_response), description='Original Text, predicted labels, and probabilities')
 })
 
 
@@ -83,7 +89,11 @@ class ModelPredictAPI(PredictAPI):
 
         try:
             output = self.model_wrapper.predict(input_json['text'])
-            result['predictions'] = output
+            result['results'] = []
+            for i in range(len(output)):
+                res = {'original_text': input_json['text'][i],
+                       'predictions': output[i]}
+                result['results'].append(res)
             result['status'] = 'ok'
             return result
 
