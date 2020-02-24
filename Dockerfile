@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-FROM codait/max-base:v1.1.3
+FROM codait/max-base:v1.3.2
 RUN apt-get update && apt-get install -y gcc && rm -rf /var/lib/apt/lists/*
 
 ARG model_bucket=https://max.cdn.appdomain.cloud/max-toxic-comment-classifier/1.0.0
