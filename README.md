@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/IBM/MAX-Toxic-Comment-Classifier.svg?branch=master)](https://travis-ci.com/IBM/MAX-Toxic-Comment-Classifier) [![API demo](https://img.shields.io/website/http/max-toxic-comment-classifier.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=API%20demo&down_message=down&up_message=up)](http://max-toxic-comment-classifier.max.us-south.containers.appdomain.cloud/)
+[![Build Status](https://travis-ci.com/IBM/MAX-Toxic-Comment-Classifier.svg?branch=master)](https://travis-ci.com/IBM/MAX-Toxic-Comment-Classifier) [![API demo](https://img.shields.io/website/http/max-toxic-comment-classifier.codait-prod-41208c73af8fca213512856c7a09db52-0000.us-east.containers.appdomain.cloud/swagger.json.svg?label=API%20demo&down_message=down&up_message=up)](http://max-toxic-comment-classifier.codait-prod-41208c73af8fca213512856c7a09db52-0000.us-east.containers.appdomain.cloud)
 
 [<img src="docs/deploy-max-to-ibm-cloud-with-kubernetes-button.png" width="400px">](http://ibm.biz/max-to-ibm-cloud-tutorial)
 
@@ -7,7 +7,7 @@
 This repository contains code to instantiate and deploy a toxic comment classifier. This model is able to detect 6 types of toxicity in a text fragment. The six detectable types are toxic, severe toxic, obscene, threat, insult, and identity hate.
 
 The model is based on the [pre-trained BERT-Base, English Uncased](https://github.com/google-research/bert/blob/master/README.md) model and was finetuned on the [Toxic Comment Classification Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data) using the [Huggingface BERT Pytorch repository](https://github.com/huggingface/pytorch-pretrained-BERT). The model files are hosted on
-[IBM Cloud Object Storage](https://s3.us-south.cloud-object-storage.appdomain.cloud/max-assets-prod/max-toxic-comment-classifier/1.0.0/assets.tar.gz).
+[IBM Cloud Object Storage](https://max-cdn.cdn.appdomain.cloud/max-toxic-comment-classifier/1.0.0/assets.tar.gz).
 The code in this repository deploys the model as a web service in a Docker container. This repository was developed
 as part of the [IBM Developer Model Asset Exchange](https://developer.ibm.com/exchanges/models/) and the public API is powered by [IBM Cloud](https://ibm.biz/Bdz2XM).
 
@@ -132,7 +132,7 @@ $ docker run -it -p 5000:5000 max-toxic-comment-classifier
 
 The API server automatically generates an interactive Swagger documentation page. Go to `http://localhost:5000` to load it. From there you can explore the API and also create test requests.
 
-```
+```json
 Example:
 {
   "text": [
@@ -181,7 +181,7 @@ Submitting proper json data triggers the model and will return a json file with 
 
 You can also test it on the command line, for example:
 
-```
+```bash
 $ curl -d "{ \"text\": [ \"I would like to punch you.\", \"In hindsight, I do apologize for my previous statement.\" ]}" -X POST "http://localhost:5000/model/predict" -H "Content-Type: application/json"
 ```
 
