@@ -161,13 +161,13 @@ def convert_examples_to_features(examples, max_seq_length, tokenizer):
         segment_ids += padding
 
         if len(input_ids) != max_seq_length:
-            raise ValueError("input_ids has an invalid length")
+            raise ValueError(f"input_ids has an invalid length {len(input_ids)}")
 
         if len(input_mask) != max_seq_length:
-            raise ValueError("input_mask has an invalid length")
+            raise ValueError(f"input_mask has an invalid length {len(input_mask)}")
 
         if len(segment_ids) != max_seq_length:
-            raise ValueError("segment_ids has an invalid length")
+            raise ValueError(f"segment_ids has an invalid length {len(segment_ids)}")
 
         labels_ids = []
         for label in example.labels:
