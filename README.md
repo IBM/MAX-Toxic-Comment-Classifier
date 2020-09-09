@@ -29,7 +29,7 @@ Identity hate: hatred, hostility, or violence towards members of a race, ethnici
 
 ## Model Metadata
 | Domain | Application | Industry  | Framework | Training Data | Input Data |
-| --------- | --------  | -------- | --------- | --------- | --------------- | 
+| --------- | --------  | -------- | --------- | --------- | --------------- |
 | Natural Language Processing (NLP) | Text Classification | General | PyTorch | [Toxic Comment Classification Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data) | Text |
 
 ## Benchmark
@@ -68,7 +68,7 @@ This model achieves a column-wise ROC AUC score of 0.98355 (private score) in th
 To run the docker image, which automatically starts the model serving API, run:
 
 ```
-$ docker run -it -p 5000:5000 codait/max-toxic-comment-classifier
+$ docker run -it -p 5000:5000 quay.io/codait/max-toxic-comment-classifier
 ```
 
 This will pull a pre-built image from Docker Hub (or use an existing image if already cached locally) and run it.
@@ -76,7 +76,7 @@ If you'd rather checkout and build the model locally you can follow the [run loc
 
 ## Deploy on Red Hat OpenShift
 
-You can deploy the model-serving microservice on Red Hat OpenShift by following the instructions for the OpenShift web console or the OpenShift Container Platform CLI [in this tutorial](https://developer.ibm.com/tutorials/deploy-a-model-asset-exchange-microservice-on-red-hat-openshift/), specifying `codait/max-toxic-comment-classifier` as the image name.
+You can deploy the model-serving microservice on Red Hat OpenShift by following the instructions for the OpenShift web console or the OpenShift Container Platform CLI [in this tutorial](https://developer.ibm.com/tutorials/deploy-a-model-asset-exchange-microservice-on-red-hat-openshift/), specifying `quay.io/codait/max-toxic-comment-classifier` as the image name.
 
 ## Deploy on Kubernetes
 You can also deploy the model on Kubernetes using the latest docker image on Docker Hub.
@@ -224,5 +224,5 @@ To run the Flask API app in debug mode, edit `config.py` to set `DEBUG = True` u
 To stop the Docker container, type `CTRL` + `C` in your terminal.
 
 ## Resources and Contributions
-   
+
 If you are interested in contributing to the Model Asset Exchange project or have any queries, please follow the instructions [here](https://github.com/CODAIT/max-central-repo).
