@@ -27,6 +27,6 @@ spec:
     spec:
       containers:
       - name: max-toxic-comment-classifier
-        image: codait/max-toxic-comment-classifier:latest
+        image: quay.io/codait/max-toxic-comment-classifier:latest
         ports:
         - containerPort: 5000
